@@ -207,18 +207,18 @@ export default class DateHelper {
 
     end = end.startOf(interval as ManipulateType);
     let pivot = dayjs.min(start, end);
-    end = dayjs.max(start, end);
+    end = dayjs.max(start, end) ?? new dayjs.Dayjs();
     const result: Timestamp[] = [];
 
     if (!excludeEnd) {
       end = end.add(1, 'second');
     }
-
-    do {
-      result.push(+pivot);
-      pivot = pivot.add(1, interval as ManipulateType);
-    } while (pivot < end);
-
+    if(pivot !== null){
+      do {
+        result.push(+pivot);
+        pivot = pivot.add(1, interval as ManipulateType);
+      } while (pivot < end);
+    }
     return result;
   }
 
