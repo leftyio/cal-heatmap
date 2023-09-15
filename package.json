@@ -1,5 +1,5 @@
 {
-  "name": "cal-heatmap",
+  "name": "@leftyio/cal-heatmap",
   "version": "4.2.3",
   "description": "Cal-Heatmap is a javascript module to create calendar heatmap to visualize time series data",
   "keywords": [
